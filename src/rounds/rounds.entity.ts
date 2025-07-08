@@ -13,10 +13,10 @@ export class Round {
   @PrimaryGeneratedColumn()
   id: string;
 
-  @ManyToOne(() => User, user => user.roundsAsPlayer1, { eager: true })
+  @ManyToOne(() => User, user => user.id, { eager: true })
   player1: User;
 
-  @ManyToOne(() => User, user => user.roundsAsPlayer2, { eager: true })
+  @ManyToOne(() => User, user => user.id, { eager: true })
   player2: User;
 
   @Column({ type: 'enum', enum: RoundStatus, default: RoundStatus.PLANNED })

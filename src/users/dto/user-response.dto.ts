@@ -1,4 +1,4 @@
-import { IsString, IsInt } from 'class-validator';
+import { IsString, IsInt, IsOptional } from 'class-validator';
 
 export class UserResponseDto {
   @IsString()
@@ -8,8 +8,10 @@ export class UserResponseDto {
   username: string;
 
   @IsInt()
-  roundsPlayed: number;
+  @IsOptional()
+  roundsPlayed?: number;
 
   @IsInt()
-  roundsWon: number;
+  @IsOptional()
+  roundsWon?: number;
 }

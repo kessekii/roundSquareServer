@@ -10,15 +10,7 @@ export class User {
   @Column({ type: 'varchar', length: 32, unique: true })
   username: string;
 
-  @Column({ type: 'int', default: 0 })
-  roundsWon: number;
+    @Column({ type: 'varchar', length: 64, nullable: true })
+    password: string;
 
-  @Column({ type: 'int', default: 0 })
-  roundsPlayed: number;
-
-  @OneToMany(() => Round, r => r.player1)
-  roundsAsPlayer1: Round[];
-
-  @OneToMany(() => Round, r => r.player2)
-  roundsAsPlayer2: Round[];
 }
